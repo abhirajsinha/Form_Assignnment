@@ -100,7 +100,19 @@ function validateForm() {
   } else if (email.value == "") {
     errorHandler("Email", "Please Enter Your Email");
   } else {
-    errorHandler("Success", "All fields are valid");
+    errObj = [];
+    errField = "Success";
+    message = "All Fields are Valid";
+    errObj.push({ errField, message });
+    suc.textContent =
+      "Result" +
+      ":" +
+      " { " +
+      errObj[0].errField +
+      " : " +
+      errObj[0].message +
+      "}";
+    suc.style.display = "block";
   }
   return true;
 }
