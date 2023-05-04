@@ -81,7 +81,6 @@ function validateForm() {
 
   if (name.value == "") {
     errorHandler("Name", "Please Enter your Name");
-    return;
   } else if (name.value.length < 4 || name.value.length > 10) {
     errorHandler("Name", "Name length should be between 4 - 10 characters");
   } else if (dob.value == "") {
@@ -114,6 +113,8 @@ function validateForm() {
       "}";
     suc.style.display = "block";
   }
+  const formBody = document.querySelector("#form");
+  window.scrollTo(0, formBody.scrollHeight);
   return true;
 }
 
