@@ -1,6 +1,7 @@
 const selectCountryDropDown = document.querySelector("#country");
 const selectStateDropDown = document.querySelector("#state");
-console.log(selectCountryDropDown.value);
+
+// document.addEventListener("DOMContentLoaded",()=>);
 selectCountryDropDown.addEventListener("click", () => {
   fetch(
     "https://raw.githubusercontent.com/stefanbinder/countries-states/master/countries.json"
@@ -44,7 +45,9 @@ const populateStates = () => {
     });
 };
 
+// document.addEventListener("DOMContentLoaded", populateStates);
 selectCountryDropDown.addEventListener("change", populateStates);
+selectCountryDropDown.addEventListener("click", populateStates);
 
 let errObj = [];
 let message = "";
@@ -89,7 +92,10 @@ function validateForm() {
     errorHandler("Phone Number", "Phone number should of 10 digits");
   } else if (selectCountryDropDown.value == "select country") {
     errorHandler("Country", "Please select a country");
-  } else if (selectStateDropDown.value == "select state") {
+  } else if (
+    selectStateDropDown.value == "select state" ||
+    selectStateDropDown.value == ""
+  ) {
     errorHandler("State", "Please select a state");
   } else if (email.value == "") {
     errorHandler("Email", "Please Enter Your Email");
