@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Form</title>
+  </head>
+  <body>
+    <div id="form">
+      <div>
+        <p>Can you please provide your personal details?</p>
+        <form id="formSubmit">
+          <label for="fname">Name</label><br />
+          <input type="text" id="fname" name="fname" value="" required/>
+          <p id="userError" >Name should be greater than 4 or less than 10</p>
+          <label for="dob">Date of Birth</label><br />
+          
+          <input type="date" id="dob" name="dob" value="" required/><br /><br />
+
+          <label for="cnumber">Contact Number</label><br />
+          <input
+            type="number"
+            id="cnumber"
+            name="cnumber"
+            value=""
+            required
+          /><br /><br />
+          <p id="phoneError">Please Enter the contact number</p>
+
+          <label for="country">Country</label>
+          <select id="country" name="country">
+            <option>select country</option></select
+          ><br /><br />
+
+          <label for="state">State</label>
+          <select id="state" name="state">
+            <option>select state</option></select
+          ><br /><br />
+
+          <label for="email">Email</label><br />
+          <input type="email" id="email" name="email" value="" required/><br /><br />
+
+          <input onclick="validateForm()" type="submit"></input>
+        </form>
+        <br />
+        <script src="script.js"></script>
+      </div>
+      <p id="suc"></p>
+    </div>
+  </body>
+</html>
